@@ -6,6 +6,6 @@ public class College {
         student.setName("Дюжев Иван Иванович");
         student.setGroup("2");
         student.setDate("22.04.2024");
-        System.out.println("студент: " + student.getName() + "\n" + "группа: " + student.getGroup()  + "\n" + "дата поступления: " + student.getDate());
+        System.out.println("студент: " + student.getName() + System.lineSeparator() + "группа: " + student.getGroup() + System.lineSeparator() + "дата поступления: " + student.getDate());
     }
 }
