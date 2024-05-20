@@ -10,12 +10,16 @@ public class MagicBall {
         System.out.print("Я великий Оракул. Что ты хочешь узнать? ");
         String yourQuestion = input.nextLine();
         int answer = new Random().nextInt(3);
-        if (answer == 0) {
-            System.out.println("да");
-        } else if (answer == 1) {
-            System.out.println("нет");
-        } else {
-            System.out.println("может быть");
+        switch (answer) {
+            case (0):
+                System.out.println("да");
+                break;
+            case (1):
+                System.out.println("нет");
+                break;
+            default:
+                System.out.println("может быть");
+                break;
         }
     }
 }
