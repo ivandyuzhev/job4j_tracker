@@ -10,21 +10,25 @@ public class Matches {
         int count = 11;
         while (count > 0) {
             String player = turn ? "Первый игрок" : "Второй игрок";
-            System.out.println(player + " введите число от 1 до 3:");
-            int matches = Integer.parseInt(input.nextLine());
-            if (matches < 1 || matches > 3) {
-                System.out.println("Введите число от 1 до 3.");
-                continue;
+            switch (count) {
+                case 1 -> System.out.println(player + " забери последнюю спичку");
+                case 2 -> System.out.println(player + " введите число от 1 до 2");
+                default -> System.out.println(player + " введите число от 1 до 3:");
             }
-            count -= matches;
-            turn = !turn;
+            int matches = Integer.parseInt(input.nextLine());
+            boolean valid = matches > 0 && matches <= Math.min(3, count);
+            if (valid) {
+                count -= matches;
+                turn = !turn;
+            } else {
+                System.out.println("Введите верное число");
+            }
         }
-
         if (!turn) {
             System.out.println("Выиграл первый игрок");
         } else {
             System.out.println("Выиграл второй игрок");
         }
-    }
 
+    }
 }
