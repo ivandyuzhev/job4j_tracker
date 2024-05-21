@@ -37,6 +37,13 @@ public class StartUI {
                 Item item = new Item(name);
                 tracker.replace(id, item);
                 System.out.println("Заявка изменена успешно.");
+            } else if (select == 3) {
+                System.out.println("=== Удаление заявки ===");
+                System.out.print("Введите id: ");
+                int id = Integer.parseInt(scanner.nextLine());
+                Item item = tracker.findById(id);
+                tracker.delete(id);
+                System.out.println(item != null ? "Заявка удалена успешно." : "Ошибка удаления заявки.");
             }
         }
     }
@@ -58,5 +65,4 @@ public class StartUI {
         Tracker tracker = new Tracker();
         new StartUI().init(scanner, tracker);
     }
-
 }
