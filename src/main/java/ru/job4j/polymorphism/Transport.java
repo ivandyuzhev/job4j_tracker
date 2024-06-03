@@ -4,8 +4,8 @@ public interface Transport {
 
     void drive();
 
-    String passengers(String number);
+    void passengers(byte number);
 
-    String refuel(String fuel);
+    double refuel(int fuel);
 
 }
