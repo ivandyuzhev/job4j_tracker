@@ -9,7 +9,7 @@ public class Bus implements Transport {
 
     @Override
     public void passengers(byte number) {
-
+        System.out.println(number + " пассажиров в автобусе");
     }
 
     @Override
