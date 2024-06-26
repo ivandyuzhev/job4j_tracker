@@ -1,5 +1,4 @@
 package ru.job4j.tracker;
-
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -49,5 +48,4 @@ class StartUITest {
         new StartUI().init(input, tracker, actions);
         assertThat(tracker.findById(item.getId())).isNull();
     }
-
 }
