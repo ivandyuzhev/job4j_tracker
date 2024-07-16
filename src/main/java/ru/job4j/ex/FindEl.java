@@ -1,9 +1,5 @@
 package ru.job4j.ex;
 
-import ru.job4j.ex.ElementNotFoundException;
-
-import javax.management.StringValueExp;
-
 public class FindEl {
     public static int indexOf(String[] value, String key) throws ElementNotFoundException {
         int result = -1;
@@ -13,12 +9,12 @@ public class FindEl {
                 return result;
             }
         }
-        throw new ElementNotFoundException("элемент '" + key + "' не найден.");
+        throw new ElementNotFoundException("Element '" + key + "' not found.");
     }
 
     public static void main(String[] args) {
-        String[] array = {"машина", "самолет", "катер"};
-        String key = "самолет";
+        String[] array = {"car", "plane", "boat"};
+        String key = "plane";
 
         try {
             int index = indexOf(array, key);
@@ -27,4 +23,5 @@ public class FindEl {
             System.out.println(e.getMessage());
         }
     }
+
 }
