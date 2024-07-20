@@ -1,6 +1,7 @@
-package ru.job4j.tracker;
+package ru.job4j.tracker.action;
 
 import org.junit.jupiter.api.Test;
+import ru.job4j.tracker.*;
 import ru.job4j.tracker.action.Exit;
 import ru.job4j.tracker.action.Replace;
 import ru.job4j.tracker.action.UserAction;
