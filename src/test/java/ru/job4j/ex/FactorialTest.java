@@ -2,7 +2,6 @@ package ru.job4j.ex;
 
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 class FactorialTest {
@@ -24,4 +23,5 @@ class FactorialTest {
         assertEquals(24, factorial.calc(4));
         assertEquals(120, factorial.calc(5));
     }
+
 }
