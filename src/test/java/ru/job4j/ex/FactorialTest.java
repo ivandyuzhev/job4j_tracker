@@ -8,11 +8,12 @@ class FactorialTest {
 
     @Test
     void whenException() {
-           Factorial exception = new Factorial();
-            assertThrows(IllegalArgumentException.class, () -> {
-               exception.calc(-1);
-            });
-        }
+        Factorial exception = new Factorial();
+        assertThrows(IllegalArgumentException.class, () -> {
+            exception.calc(-1);
+        });
+    }
+
     @Test
     void whenCorrectFactorial() {
         Factorial factorial = new Factorial();
