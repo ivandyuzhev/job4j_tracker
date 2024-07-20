@@ -2,13 +2,10 @@ package ru.job4j.tracker.action;
 
 import org.junit.jupiter.api.Test;
 import ru.job4j.tracker.*;
-import ru.job4j.tracker.action.Exit;
-import ru.job4j.tracker.action.Replace;
-import ru.job4j.tracker.action.UserAction;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-class FindAllTest {
+class FindAllActionTest {
 
     @Test
     void whenFindAllActionTestOutputIsSuccessfully() {
@@ -16,22 +13,22 @@ class FindAllTest {
         Tracker tracker = new Tracker();
         Item one = tracker.add(new Item("test1"));
         Input input = new MockInput(
-                new String[]{"1", String.valueOf(one.getId()), "2"}
+                new String[]{"0", "1"}
         );
         UserAction[] actions = new UserAction[]{
-                new Replace(output),
-                new Exit(output)
+                new FindAllAction(output),
+                new ExitAction(output)
         };
         new StartUI(output).init(input, tracker, actions);
         String ln = System.lineSeparator();
         assertThat(output.toString()).isEqualTo(
                 "Меню:" + ln
-                        + "0. Добавить новую заявку" + ln
-                        + "1. Показать все заявки" + ln
-                        + "=== Редактирование заявки ===" + ln
-                        + "Заявка изменена успешно." + ln
+                        + "0. Показать все заявки" + ln
+                        + "1. Завершить программу" + ln
+                        + "=== Вывод всех заявок ===" + ln
+                        + one + ln
                         + "Меню:" + ln
-                        + "0. Изменить заявку" + ln
+                        + "0. Показать все заявки" + ln
                         + "1. Завершить программу" + ln
                         + "=== Завершение программы ===" + ln
         );
