@@ -18,7 +18,7 @@ class ValidateInputTest {
     }
 
     @Test
-    void WhenCorrectInput() {
+    void whenCorrectInput() {
         Output output = new StubOutput();
         Input in = new MockInput(
                 new String[]{"2"}
@@ -29,7 +29,7 @@ class ValidateInputTest {
     }
 
     @Test
-    void WhenMultipleCorrectInput() {
+    void whenMultipleCorrectInput() {
         Output output = new StubOutput();
         Input in = new MockInput(
                 new String[]{"1", "2", "3"}
@@ -44,7 +44,7 @@ class ValidateInputTest {
     }
 
     @Test
-    void WhenTheNumberIsNegative() {
+    void whenTheNumberIsNegative() {
         Output output = new StubOutput();
         Input in = new MockInput(
                 new String[]{"-1"}
