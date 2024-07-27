@@ -32,12 +32,12 @@ public final class SingleTracker {
         return tracker.findAll();
     }
 
-    public boolean replace(int id, Item item) {
-        return tracker.replace(id, item);
+    public void replace(int id, Item item) {
+        tracker.replace(id, item);
     }
 
-    public boolean delete(int id) {
-        return tracker.delete(id);
+    public void delete(int id) {
+        tracker.delete(id);
     }
 
 }
