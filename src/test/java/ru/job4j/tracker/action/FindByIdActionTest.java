@@ -6,30 +6,30 @@ import ru.job4j.tracker.*;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
-class FindByNameActionTest {
+class FindByIdActionTest {
     @Test
-    void whenFindByNameActionExecutesSuccessfully() {
+    void whenFindByIdActionExecutesSuccessfully() {
         Output output = new StubOutput();
         Tracker tracker = new Tracker();
-        Item one = new Item("test1");
+        Item one = new Item("test3");
         tracker.add(one);
         Input input = new MockInput(
-                new String[]{"0", String.valueOf(one.getName()), "1"}
+                new String[]{"0", String.valueOf(one.getId()), "1"}
         );
         UserAction[] actions = new UserAction[]{
-                new FindByNameAction(output),
+                new FindByIdAction(output),
                 new ExitAction(output)
         };
         new StartUI(output).init(input, tracker, actions);
         String ln = System.lineSeparator();
         assertThat(output.toString()).isEqualTo(
                 "Меню:" + ln
-                        + "0. Вывод заявки по имени" + ln
+                        + "0. Вывод заявки по id" + ln
                         + "1. Завершить программу" + ln
-                        + "=== Вывод заявок по имени ===" + ln
+                        + "=== Вывод заявки по id ===" + ln
                         + one + ln
                         + "Меню:" + ln
-                        + "0. Вывод заявки по имени" + ln
+                        + "0. Вывод заявки по id" + ln
                         + "1. Завершить программу" + ln
                         + "=== Завершение программы ===" + ln
         );

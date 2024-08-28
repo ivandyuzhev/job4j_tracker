@@ -11,7 +11,7 @@ class FindAllActionTest {
     void whenFindAllActionTestOutputIsSuccessfully() {
         Output output = new StubOutput();
         Tracker tracker = new Tracker();
-        Item one = tracker.add(new Item("test1"));
+        Item one = tracker.add(new Item("test2"));
         Input input = new MockInput(
                 new String[]{"0", "1"}
         );
