@@ -3,8 +3,9 @@ package ru.job4j.tracker.action;
 import org.junit.jupiter.api.Test;
 import ru.job4j.tracker.*;
 
+import java.util.List;
+
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 class FindByIdActionTest {
     @Test
@@ -20,7 +21,7 @@ class FindByIdActionTest {
                 new FindByIdAction(output),
                 new ExitAction(output)
         };
-        new StartUI(output).init(input, tracker, actions);
+        new StartUI(output).init(input, tracker, List.of(actions));
         String ln = System.lineSeparator();
         assertThat(output.toString()).isEqualTo(
                 "Меню:" + ln

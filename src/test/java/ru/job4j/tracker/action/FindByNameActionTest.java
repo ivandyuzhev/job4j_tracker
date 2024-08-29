@@ -3,8 +3,9 @@ package ru.job4j.tracker.action;
 import org.junit.jupiter.api.Test;
 import ru.job4j.tracker.*;
 
+import java.util.List;
+
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 class FindByNameActionTest {
     @Test
@@ -14,13 +15,13 @@ class FindByNameActionTest {
         Item one = new Item("test1");
         tracker.add(one);
         Input input = new MockInput(
-                new String[]{"0", String.valueOf(one.getName()), "1"}
+                new String[]{"0", (one.getName()), "1"}
         );
         UserAction[] actions = new UserAction[]{
                 new FindByNameAction(output),
                 new ExitAction(output)
         };
-        new StartUI(output).init(input, tracker, actions);
+        new StartUI(output).init(input, tracker, List.of(actions));
         String ln = System.lineSeparator();
         assertThat(output.toString()).isEqualTo(
                 "Меню:" + ln
