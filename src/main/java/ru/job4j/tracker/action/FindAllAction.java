@@ -2,8 +2,6 @@ package ru.job4j.tracker.action;
 
 import ru.job4j.tracker.*;
 
-import java.util.List;
-
 public class FindAllAction implements UserAction {
     private final Output output;
 
@@ -19,8 +17,8 @@ public class FindAllAction implements UserAction {
     @Override
     public boolean execute(Input input, Tracker tracker) {
         output.println("=== Вывод всех заявок ===");
-        List<Item> items = tracker.findAll();
-        if (items.size() > 0) {
+        Item[] items = tracker.findAll();
+        if (items.length > 0) {
             for (Item item : items) {
                 output.println(item);
             }
