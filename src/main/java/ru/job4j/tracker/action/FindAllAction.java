@@ -2,11 +2,13 @@ package ru.job4j.tracker.action;
 
 import ru.job4j.tracker.*;
 
-public class FindAllAction implements UserAction {
-    private final Output output;
+import java.util.List;
 
-    public FindAllAction(Output output) {
-        this.output = output;
+public class FindAllAction implements UserAction {
+    private final Output out;
+
+    public FindAllAction(Output out) {
+        this.out = out;
     }
 
     @Override
@@ -16,14 +18,14 @@ public class FindAllAction implements UserAction {
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
-        output.println("=== Вывод всех заявок ===");
-        Item[] items = tracker.findAll();
-        if (items.length > 0) {
+        out.println("=== Вывод всех заявок ===");
+        List<Item> items = tracker.findAll();
+        if (items.size() > 0) {
             for (Item item : items) {
-                output.println(item);
+                out.println(item);
             }
         } else {
-            output.println("Хранилище еще не содержит заявок");
+            out.println("Хранилище еще не содержит заявок");
         }
         return true;
     }
