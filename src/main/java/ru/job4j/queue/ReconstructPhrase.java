@@ -16,10 +16,12 @@ public class ReconstructPhrase {
 
     private String getEvenElements() {
         StringBuilder sb = new StringBuilder();
-        List<Character> evenList = new LinkedList<>(evenElements);
-        for (int i = 0; i < evenList.size(); i++) {
+        int count = evenElements.size();
+        for (int i = 0; i < count; i++) {
             if (i % 2 == 0) {
-                sb.append(evenList.get(i));
+                sb.append((evenElements.pollFirst()));
+            } else {
+                evenElements.pollFirst();
             }
         }
         return sb.toString();
