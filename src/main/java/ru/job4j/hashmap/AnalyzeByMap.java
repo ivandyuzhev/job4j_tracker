@@ -19,11 +19,11 @@ public class AnalyzeByMap {
         List<Label> labels = new ArrayList<>();
         for (Pupil pupil : pupils) {
             double totalScore = 0;
-            int count = pupil.subjects().size();  // Количество предметов у ученика
+            int count = pupil.subjects().size();
             for (Subject subject : pupil.subjects()) {
-                totalScore += subject.score();  // Суммируем оценки
+                totalScore += subject.score();
             }
-            labels.add(new Label(pupil.name(), totalScore / count));  // Создаём Label для ученика
+            labels.add(new Label(pupil.name(), totalScore / count));
         }
         return labels;
     }
