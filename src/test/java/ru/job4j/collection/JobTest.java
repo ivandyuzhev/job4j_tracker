@@ -45,7 +45,7 @@ public class JobTest {
         Comparator<Job> cmpNamePriority = new JobAscByName().thenComparing(new JobAscByPriority());
         int rsl = cmpNamePriority.compare(
                 new Job("Artem Artemov", 0),
-                new Job("Artem Ivanov", 1)
+                new Job("Artem Artemov", 1)
 
         );
         assertThat(rsl).isLessThan(0);
